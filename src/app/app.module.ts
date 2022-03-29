@@ -16,7 +16,8 @@ import { Scoreboard } from './scoreboard/scbd.compo'
     QuestionComponent,
     StatsComponent,
     DisplayComponent,
-    GameComponent
+    GameComponent,
+    Scoreboard,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from '../services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -6,22 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemon.component.scss'],
 })
 export class PokemonComponent implements OnInit {
-  RandomPkmImg = '';
 
-  ngOnInit(): void {
-    var RandomPkm;
-    var RandomPkmId = Math.floor(Math.random() * 898);
+  RandomPkmImg : any;
+  RandomPokemon : any;
 
-    this.RandomPkmImg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${RandomPkmId}.png`;
 
-    RandomPkm = fetch(`https://pokeapi.co/api/v2/pokemon/${RandomPkmId}`)
-      .then(response => response.json())
-      .then(data => 
-        console.log(data)
-      )
+  constructor(private PokemonService: PokemonService) {}
 
-        
-      
-
+  ngOnInit() {
+    this.PokemonService
+      .getRandomPokemon()
+      .subscribe((RandomPokemon) => {
+        this.RandomPokemon = RandomPokemon;
+      });
   }
+
 }

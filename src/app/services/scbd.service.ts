@@ -14,7 +14,7 @@ export class ScoreboardService {
       .get<any>('./assets/scbd.fake.json')
       .pipe(
         map((data) => {
-          return data.results;
+          return data;
         })
       );
 

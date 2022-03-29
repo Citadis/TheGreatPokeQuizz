@@ -17,11 +17,11 @@ export class Scoreboard implements OnInit {
         this.ScoreboardService.getScoreboardData()
         .subscribe(function(data){
             console.log(data)
-            tabInsert = document.querySelector("#scoreSpace").innerHTML
-            data.foreach(function(line){
+            var tabInsert = document.querySelector("#scoreSpace")!.innerHTML
+            data.foreach(function(line: { name: string; score: string; date: string; }){
                 tabInsert += "<tr><td>" + line.name + "</td><td>" + line.score + "</td><td>" + line.date + "</td></tr>" 
             })
-        }, console.warn("Erreur dans le transfert de données"))
+        })
     }
     
 }
