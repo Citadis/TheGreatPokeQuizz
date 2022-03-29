@@ -15,7 +15,7 @@ export class Scoreboard implements OnInit {
     
     ngOnInit(): void {
         this.ScoreboardService.getScoreboardData()
-        .then(function(data){
+        .subscribe(function(data){
             console.log(data)
             tabInsert = document.querySelector("#scoreSpace").innerHTML
             data.foreach(function(line){
