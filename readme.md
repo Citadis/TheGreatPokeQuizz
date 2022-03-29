@@ -11,7 +11,7 @@ Angular x PokeAPI, le projet  Angular pokémon de S4
 ## Authors
 
 - [@Noé Charpentier](https://www.github.com/Citadis)
-- @Virgil
+- [@Virgil](https://www.github.com/hectaly07)
 
 
 ## Démarage
