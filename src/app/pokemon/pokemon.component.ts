@@ -9,6 +9,11 @@ import { PokemonService } from '../services/pokemon.service';
 export class PokemonComponent implements OnInit {
 
   RandomPokemon : any;
+  
+  RandomProposition1 : any;
+  RandomProposition2 : any;
+
+
 
 
   constructor(private PokemonService: PokemonService) {}
@@ -19,6 +24,22 @@ export class PokemonComponent implements OnInit {
       .subscribe((RandomPokemon) => {
         this.RandomPokemon = RandomPokemon;
       });
+
+      
+
+    
+    this.PokemonService
+    .getRandomProposition1()
+    .subscribe((RandomProposition1) => {
+      this.RandomProposition1 = RandomProposition1;
+    });
+
+    this.PokemonService
+    .getRandomProposition2()
+    .subscribe((RandomProposition2) => {
+      this.RandomProposition2 = RandomProposition2;
+    });
+    
       
   }
 

@@ -13,13 +13,32 @@ export class PokemonService {
 
 
   RandomPokemonId = Math.floor(Math.random() * 898);
+  RandomPokemonId1 = Math.floor(Math.random() * 898);
+  RandomPokemonId2 = Math.floor(Math.random() * 898);
 
-  public getRandomPokemon(): Observable<any> {
+  public getRandomProposition1(): Observable<any> {
 
     const httpResponse = this.httpClient
     
 
-      .get<any>(`https://pokeapi.co/api/v2/pokemon/${this.RandomPokemonId}`)
+      .get<any>(`https://pokeapi.co/api/v2/pokemon/${this.RandomPokemonId1}`)
+      .pipe(
+        map((data) => {
+          return data;
+        })
+      );
+      
+
+    return httpResponse;
+
+  }
+
+  public getRandomProposition2(): Observable<any> {
+
+    const httpResponse = this.httpClient
+    
+
+      .get<any>(`https://pokeapi.co/api/v2/pokemon/${this.RandomPokemonId2}`)
       .pipe(
         map((data) => {
           return data;

@@ -14,23 +14,8 @@ export class PropositionsService {
 
 
 
-  RandomPokemonId = Math.floor(Math.random() * 898);
 
-  public getRandomProposition(): Observable<any> {
 
-    const httpResponse = this.httpClient
-    
-
-      .get<any>(`https://pokeapi.co/api/v2/pokemon/${this.RandomPokemonId}`)
-      .pipe(
-        map((data) => {
-          return data;
-        })
-      );
-      
-
-    return httpResponse;
-
-  }
+ 
 
 }
