@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { DisplayComponent } from './display/display.component';
 import { GameComponent } from './game/game.component';
+import { Scoreboard } from './scoreboard/scbd.compo'
 
 @NgModule({
   declarations: [

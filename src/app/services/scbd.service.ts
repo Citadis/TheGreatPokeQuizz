@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class ScoreboardService {
   constructor(private httpClient: HttpClient) {}
 
-  public getScorebordData(): Observable<any> {
+  public getScoreboardData(): Observable<any> {
     const httpResponse = this.httpClient
       .get<any>('../scoreboard/scbd.fake.json')
       .pipe(

@@ -3,16 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { ScoreboardService } from '../services/scbd.service';
 
 @Component({
-    selector: 'scorebord',
+    selector: 'scoreboard',
     templateUrl: './scbd.compo.html',
     styleUrls: ['./scbd.compo.scss']
 })
-export class scorebord implements OnInit {
+export class Scoreboard implements OnInit {
     
     constructor() { }
     
     ngOnInit(): void {
-        this.ScoreboardService.getScorebordData()
+        this.ScoreboardService.getScoreboardData()
         .then(function(data){
             console.log(data)
             tabInsert = document.querySelector("#scoreSpace").innerHTML
