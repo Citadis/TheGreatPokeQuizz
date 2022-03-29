@@ -9,7 +9,9 @@ import { ScoreboardService } from '../services/scbd.service';
 })
 export class Scoreboard implements OnInit {
     
-    constructor() { }
+    constructor(
+        private ScoreboardService: ScoreboardService,
+        ) {}
     
     ngOnInit(): void {
         this.ScoreboardService.getScoreboardData()
