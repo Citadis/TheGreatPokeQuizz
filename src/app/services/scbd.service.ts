@@ -11,7 +11,7 @@ export class ScoreboardService {
 
   public getScoreboardData(): Observable<any> {
     const httpResponse = this.httpClient
-      .get<any>('scbd.fake.json')
+      .get<any>('./assets/scbd.fake.json')
       .pipe(
         map((data) => {
           return data.results;
