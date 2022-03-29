@@ -1,0 +1,44 @@
+header {
+  gap: 0.5em;
+  background: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 5, 0, 0.2);
+  padding:1em;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.nav-link {
+  color: #fff;
+  text-transform: uppercase;
+  padding: .2em .5em;
+  background: linear-gradient(45deg, #07d299, #acf4ce);
+  border-radius: 2em;
+  width: 10em;
+  text-align: center;
+
+  &:hover{
+    background: linear-gradient(45deg, #07d299, #07d299, #07d299, #acf4ce);
+  }
+}
+
+h1 {
+  font: 1.5em "Fipps", sans-serif;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: .5em;
+}
+
+li {
+  list-style: none;
+}
+
+main {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
