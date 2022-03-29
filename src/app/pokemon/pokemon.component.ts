@@ -8,7 +8,6 @@ import { PokemonService } from '../services/pokemon.service';
 })
 export class PokemonComponent implements OnInit {
 
-  RandomPkmImg : any;
   RandomPokemon : any;
 
 
@@ -20,6 +19,7 @@ export class PokemonComponent implements OnInit {
       .subscribe((RandomPokemon) => {
         this.RandomPokemon = RandomPokemon;
       });
+      
   }
 
 }

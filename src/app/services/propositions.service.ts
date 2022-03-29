@@ -6,7 +6,9 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class PokemonService {
+export class PropositionsService {
+
+
 
   constructor(private httpClient: HttpClient) {}
 
@@ -14,7 +16,7 @@ export class PokemonService {
 
   RandomPokemonId = Math.floor(Math.random() * 898);
 
-  public getRandomPokemon(): Observable<any> {
+  public getRandomProposition(): Observable<any> {
 
     const httpResponse = this.httpClient
     

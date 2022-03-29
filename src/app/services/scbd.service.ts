@@ -16,7 +16,7 @@ export class ScoreboardService {
         map((data) => {
           // console.log("[Debug] : getScoreboardData()")
           console.groupCollapsed("[Debug] : getScoreboardData()")
-          data.forEach(line => {
+          data.forEach((line: any) => {
             console.log(line)            
           });
           console.groupEnd();
