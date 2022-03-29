@@ -14,7 +14,12 @@ export class ScoreboardService {
       .get<any>('./assets/scbd.fake.json')
       .pipe(
         map((data) => {
-          console.log("[Debug] : getScoreboardData()" + data)
+          // console.log("[Debug] : getScoreboardData()")
+          console.groupCollapsed("[Debug] : getScoreboardData()")
+          data.forEach(line => {
+            console.log(line)            
+          });
+          console.groupEnd();
           return data;
         })
       );
