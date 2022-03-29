@@ -19,7 +19,8 @@ export class Scoreboard implements OnInit {
             console.log(data)
             var tabInsert = document.querySelector("#scoreSpace")!.innerHTML
             data.foreach(function(line: { name: string; score: string; date: string; }){
-                tabInsert += "<tr><td>" + line.name + "</td><td>" + line.score + "</td><td>" + line.date + "</td></tr>" 
+                 var str = "<tr><td>" + line.name + "</td><td>" + line.score + "</td><td>" + line.date + "</td></tr>"
+                 tabInsert += str
             })
         })
     }
