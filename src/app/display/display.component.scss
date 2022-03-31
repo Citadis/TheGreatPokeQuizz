@@ -1,8 +1,11 @@
+$btn-gradient: linear-gradient(45deg, #07d299, #acf4ce);
+
 header {
   gap: 0.5em;
   background: #fff;
   box-shadow: 0px 2px 5px rgba(0, 5, 0, 0.2);
   padding:1em;
+  margin-bottom: 2em;
 }
 
 nav{
@@ -14,31 +17,29 @@ nav{
 
 .nav-link {
   color: #fff;
+  font-size: clamp(14px, 3vh, 24px);
   text-transform: uppercase;
   padding: .2em .5em;
-  background: linear-gradient(45deg, #07d299, #acf4ce);
-  border-radius: 2em;
-  width: 10em;
+  background: $btn-gradient;
+  border-radius: 50px;
+  min-width: 10em;
   text-align: center;
 
   &:hover{
-    background: linear-gradient(45deg, #07d299, #07d299, #07d299, #acf4ce);
+    filter: brightness(90%);
+  }
+  &.active{
+    filter: brightness(80%);
+    cursor: default;
   }
 }
 
 h1 {
-  font: 1.5em "Fipps", sans-serif;
+  font-family: "Fipps", sans-serif;
+  font-size: clamp(24px, 5vh, 60px);
   line-height: 1;
   text-align: center;
   margin-bottom: .5em;
 }
 
-li {
-  list-style: none;
-}
 
-main {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-}

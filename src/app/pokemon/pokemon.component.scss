@@ -1,0 +1,36 @@
+$btn-gradient: linear-gradient(45deg, #07d299, #acf4ce);
+
+
+.PokemonImage{
+    filter: brightness(0%);
+    max-width: 100%;
+    max-height:  clamp(50px, 50vh, 50vh);;
+}
+
+.propositions{
+    display: flex;
+    justify-content: space-between;
+    gap: .5em;
+    margin-inline: 2em;
+
+    .proposition {
+        text-transform: capitalize;
+        border: none;
+        background: #fff;
+        padding: .2em .5em;
+        border-radius:50px;
+        box-shadow: 2px 2px 5px rgba(0, 5, 0, 0.2);    
+        &:hover{
+            background: #eee;
+        }
+    }
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 2em;
+  }
+

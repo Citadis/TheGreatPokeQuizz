@@ -1,4 +1,6 @@
 h2{
-    font-size: 3em;
+    text-align: center;
+    font-size: clamp(26px, 10vh, 50px);
     font-weight: bold;
+    line-height: 1;
 }
