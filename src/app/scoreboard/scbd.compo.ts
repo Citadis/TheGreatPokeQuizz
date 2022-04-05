@@ -8,6 +8,7 @@ import { ScoreboardService } from '../services/scbd.service';
     styleUrls: ['./scbd.compo.scss']
 })
 export class Scoreboard implements OnInit {
+    playerSCBD:any[] = [];
     
     constructor(
         private ScoreboardService: ScoreboardService,
@@ -15,13 +16,14 @@ export class Scoreboard implements OnInit {
     
     ngOnInit(): void {
         this.ScoreboardService.getScoreboardData()
-        .subscribe(function(data){
+        .subscribe((data:any[])=>{
             console.log(data)
-            var tabInsert = document.querySelector("#scoreSpace")!.innerHTML
-            data.foreach(function(line: { name: string; score: string; date: string; }){
-                 var str = "<tr><td>" + line.name + "</td><td>" + line.score + "</td><td>" + line.date + "</td></tr>"
-                 tabInsert += str
-            })
+            this.playerSCBD = data
+            // var tabInsert = document.querySelector("#scoreSpace")!.innerHTML
+            // data.forEach(function(line: { name: string; score: string; date: string; }){
+            //      var str = "<tr><td>" + line.name + "</td><td>" + line.score + "</td><td>" + line.date + "</td></tr>"
+            //      tabInsert += str
+            // })
         })
     }
     

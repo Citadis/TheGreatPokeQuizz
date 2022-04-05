@@ -9,6 +9,6 @@
         </tr>
     </thead>
     <tbody id="scoreSpace">
-
+        <tr *ngFor="let player of playerSCBD"><th>{{ player.name }}</th><th>{{ player.score }}</th><th>{{ player.date }}</th></tr>
     </tbody>
 </table>
