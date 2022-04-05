@@ -143,19 +143,19 @@ export class PokemonService {
       proposition3.style.order = (Math.floor(Math.random() * 3) + 1).toString();
     }
   }
-  
+
   // Show image of the pokemon when the user click on the correct answer
   public showPokemonImage() {
-    const pokemonImage = document.querySelector('.pokemon-image') as HTMLElement;
-    const correctAnswer = document.querySelector('.proposition:nth-child(1)') as HTMLElement;
-    addEventListener('click', (event) => {
-      if (event.target == correctAnswer) {
-        pokemonImage.style.filter = 'brightness(100%)';
-      }
-    }, false);
+    const pokemonImage = document.querySelector(
+      '.pokemon-image'
+    ) as HTMLElement;
+    const correctAnswer = document.querySelector(
+      '.proposition:nth-child(1)'
+    ) as HTMLElement;
+    console.log('Correct answer');
+    pokemonImage.style.filter = 'brightness(100%)';
+    pokemonImage.style.transition = 'filter 1s';
+
+    correctAnswer.classList.add('success');
   }
-  
-  
-
-
 }
