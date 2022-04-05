@@ -12,6 +12,7 @@ export class PokemonService {
   RandomPokemonId1 = Math.floor(Math.random() * 898);
   RandomPokemonId2 = Math.floor(Math.random() * 898);
   RandomPokemonId3 = Math.floor(Math.random() * 898);
+  CorrectAnswer = '';
 
   public getRandomPokemon(): Observable<any> {
     const httpResponse = this.httpClient
@@ -36,6 +37,7 @@ export class PokemonService {
         map((data) => {
           let i = 0;
 
+          console.groupCollapsed('Fonction getRandomProposition1');
           console.log(`Début fonction getRandomProposition1`);
 
           while (data.names[i].language.name != 'fr') {
@@ -46,7 +48,9 @@ export class PokemonService {
           }
 
           console.log('Fin fonction getRandomProposition1');
+          console.groupEnd();
 
+          this.CorrectAnswer = data.names[i].name;
           return data.names[i].name;
         })
       );
@@ -64,6 +68,7 @@ export class PokemonService {
         map((data) => {
           let i = 0;
 
+          console.groupCollapsed('Fonction getRandomProposition2');
           console.log(`Début fonction getRandomProposition2`);
 
           while (data.names[i].language.name != 'fr') {
@@ -74,6 +79,7 @@ export class PokemonService {
           }
 
           console.log(`Fin fonction getRandomProposition2`);
+          console.groupEnd();
 
           return data.names[i].name;
         })
@@ -92,6 +98,7 @@ export class PokemonService {
         map((data) => {
           let i = 0;
 
+          console.groupCollapsed('Fonction getRandomProposition3');
           console.log(`Début fonction getRandomProposition3`);
 
           while (data.names[i].language.name != 'fr') {
@@ -102,6 +109,7 @@ export class PokemonService {
           }
 
           console.log(`Fin fonction getRandomProposition3`);
+          console.groupEnd();
 
           return data.names[i].name;
         })
@@ -110,19 +118,44 @@ export class PokemonService {
     return httpResponse;
   }
 
-  // Randomize proposition's order
-  public randomizePropositionOrder() {
-    console.log(`Début fonction randomizePropositionOrder`);
+  // Shuffle proposition's order
+  public shufflePropositionOrder() {
+    const proposition1 = document.querySelector(
+      '.proposition:nth-child(1)'
+    ) as HTMLElement;
+    const proposition2 = document.querySelector(
+      '.proposition:nth-child(2)'
+    ) as HTMLElement;
+    const proposition3 = document.querySelector(
+      '.proposition:nth-child(3)'
+    ) as HTMLElement;
 
-    let propositions = document.querySelectorAll('.proposition');
-
-    for (let i = 0; propositions[i]; i++) {
-      let randomNumber = Math.floor(Math.random() * 3) + 1;
-      console.log(`proposition : ${i},  order : ${randomNumber}`);
-      var c = ((propositions[i] as HTMLElement).style.order =
-        randomNumber.toString());
+    proposition1.style.order = (Math.floor(Math.random() * 3) + 1).toString();
+    proposition2.style.order = (Math.floor(Math.random() * 3) + 1).toString();
+    while (proposition1.style.order == proposition2.style.order) {
+      proposition2.style.order = (Math.floor(Math.random() * 3) + 1).toString();
     }
-
-    console.log(`Fin fonction randomizePropositionOrder`);
+    proposition3.style.order = (Math.floor(Math.random() * 3) + 1).toString();
+    while (
+      proposition1.style.order == proposition3.style.order ||
+      proposition2.style.order == proposition3.style.order
+    ) {
+      proposition3.style.order = (Math.floor(Math.random() * 3) + 1).toString();
+    }
   }
+  
+  // Show image of the pokemon when the user click on the correct answer
+  public showPokemonImage() {
+    const pokemonImage = document.querySelector('.pokemon-image') as HTMLElement;
+    const correctAnswer = document.querySelector('.proposition:nth-child(1)') as HTMLElement;
+    addEventListener('click', (event) => {
+      if (event.target == correctAnswer) {
+        pokemonImage.style.filter = 'brightness(100%)';
+      }
+    }, false);
+  }
+  
+  
+
+
 }

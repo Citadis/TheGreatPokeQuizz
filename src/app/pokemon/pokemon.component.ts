@@ -41,13 +41,12 @@ export class PokemonComponent implements OnInit {
       .subscribe((RandomProposition3) => {
         this.RandomProposition3 = RandomProposition3;
       });
-      
-      this.PokemonService
-      .randomizePropositionOrder();
 
-      
+      this.PokemonService
+      .shufflePropositionOrder();
       
   }
+  
 
   
 

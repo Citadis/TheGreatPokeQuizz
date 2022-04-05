@@ -1,10 +1,11 @@
 $btn-gradient: linear-gradient(45deg, #07d299, #acf4ce);
 
 
-.PokemonImage{
+.pokemon-image{
     filter: brightness(0%);
     max-width: 100%;
-    max-height:  clamp(50px, 50vh, 50vh);;
+    max-height:  clamp(50px, 50vh, 50vh);
+    margin-bottom: 1em;
 }
 
 .propositions{
