@@ -158,7 +158,9 @@ export class PokemonService {
     console.log('Correct answer');
     pokemonImage.style.filter = 'brightness(100%)';
     pokemonImage.style.transition = 'filter 1s';
-
+    
+    const mainText = document.querySelector("#main-text") as HTMLElement;
+    mainText.innerHTML = `C'est ${correctAnswer.innerHTML} !`;
     correctAnswer.classList.add('success');
     badAnswers.forEach(element => {
       element.classList.add('disabled');

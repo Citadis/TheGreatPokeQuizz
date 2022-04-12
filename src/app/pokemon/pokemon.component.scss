@@ -1,6 +1,11 @@
 $btn-gradient: linear-gradient(45deg, #07d299, #acf4ce);
 
-
+h1{
+    text-align: center;
+    font-size: clamp(26px, 10vh, 50px);
+    font-weight: bold;
+    line-height: 1;
+}
 
 .pokemon-image {
     filter: brightness(0%);
@@ -9,6 +14,9 @@ $btn-gradient: linear-gradient(45deg, #07d299, #acf4ce);
     margin-bottom: 1em;
 }
 
+.overlay{
+    pointer-events: none;
+}
 .propositions{
     display: flex;
     justify-content: space-between;
@@ -30,19 +38,12 @@ $btn-gradient: linear-gradient(45deg, #07d299, #acf4ce);
 
     .success{
         background: #07d299;
-        &:hover{
-            background: #07d299;
-            cursor: default;
-        }
+        pointer-events: none;
     }
 
     .disabled{
         background: #888;
-        &:hover{
-            background: #888;
-            cursor: default;
-            pointer-events: none;
-        }   
+        pointer-events: none;
     }
 }
 

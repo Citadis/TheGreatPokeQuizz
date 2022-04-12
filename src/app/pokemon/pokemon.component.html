@@ -1,6 +1,7 @@
 <main>
+    <h1 id="main-text">Quel est ce pokémon?</h1>
     <!-- random pokemon sprite -->
-<img *ngIf="RandomPokemon" src="" [src]='RandomPokemon["sprites"]["other"]["official-artwork"]["front_default"]' class="pokemon-image" alt="Pokemon Image">
+<div class="overlay"><img *ngIf="RandomPokemon" src="" [src]='RandomPokemon["sprites"]["other"]["official-artwork"]["front_default"]' class="pokemon-image" alt="Pokemon Image"></div>
 
 <!-- 3 random propositions -->
 <div class="propositions">
@@ -10,6 +11,6 @@
 </div>
 
 
-
+ 
 
 </main>
