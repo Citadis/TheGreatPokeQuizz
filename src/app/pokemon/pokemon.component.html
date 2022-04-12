@@ -4,7 +4,7 @@
     <div class="overlay"><img *ngIf="RandomPokemon" src=""
             [src]='RandomPokemon["sprites"]["other"]["official-artwork"]["front_default"]' class="pokemon-image"
             alt="Pokemon Image"></div>
-    <button class="next-pokemon-button">Suivant</button>
+    <button (click)="resetPokemon()" class="next-pokemon-button">Suivant</button>
     <div class="score">Score : <span class="score-value"></span>{{Score}}</div>
 
     <!-- 3 random propositions -->

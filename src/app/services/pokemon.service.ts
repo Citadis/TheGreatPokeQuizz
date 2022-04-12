@@ -173,13 +173,13 @@ export class PokemonService {
     // Show the next pokemon button
     const nextPokemonButton = document.querySelector('.next-pokemon-button') as HTMLElement;
     nextPokemonButton.style.visibility = 'visible';
-
-    // Reset the pokemon
-    resetPokemon(){
-      
-    }
-
-
-
   }
+
+      // Reset the pokemon
+      public resetPokemon(){
+        this.RandomPokemonId1 = Math.floor(Math.random() * 897);
+        this.RandomPokemonId2 = Math.floor(Math.random() * 897);
+        this.RandomPokemonId3 = Math.floor(Math.random() * 897);
+        this.shufflePropositionOrder();
+      };
 }

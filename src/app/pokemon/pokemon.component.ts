@@ -17,12 +17,12 @@ export class PokemonComponent implements OnInit {
   // import the function showPokemonImage from the pokemon.service.ts file
   showPokemonImage() {
     this.PokemonService.showPokemonImage();
-    console.log(this.PokemonService.Score)
     this.Score = this.PokemonService.Score;
   }
 
   resetPokemon() {
     this.PokemonService.resetPokemon();
+    this.RandomPokemonId1 = this.PokemonService.RandomPokemonId1;
   }
 
   constructor(private PokemonService: PokemonService) {}
