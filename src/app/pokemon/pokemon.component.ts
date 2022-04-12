@@ -12,10 +12,13 @@ export class PokemonComponent implements OnInit {
   RandomProposition2: any;
   RandomProposition3: any;
   RandomProposition1: any;
+  Score = 0;
 
   // import the function showPokemonImage from the pokemon.service.ts file
   showPokemonImage() {
     this.PokemonService.showPokemonImage();
+    console.log(this.PokemonService.Score)
+    this.Score = this.PokemonService.Score;
   }
 
   constructor(private PokemonService: PokemonService) {}

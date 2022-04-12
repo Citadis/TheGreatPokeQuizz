@@ -12,6 +12,7 @@ export class PokemonService {
   RandomPokemonId1 = Math.floor(Math.random() * 898);
   RandomPokemonId2 = Math.floor(Math.random() * 898);
   RandomPokemonId3 = Math.floor(Math.random() * 898);
+  Score = 0;
   CorrectAnswer = '';
 
   public getRandomPokemon(): Observable<any> {
@@ -144,7 +145,7 @@ export class PokemonService {
     }
   }
 
-  // Show image of the pokemon when the user click on the correct answer
+  // Show image of the pokemon when the user click on the correct answer and change the text
   public showPokemonImage() {
     const pokemonImage = document.querySelector(
       '.pokemon-image'
@@ -155,7 +156,7 @@ export class PokemonService {
     const badAnswers = document.querySelectorAll(
       '.proposition:nth-child(2) , .proposition:nth-child(3)'
     ) as NodeListOf<HTMLElement>;
-    console.log('Correct answer');
+    console.log('Correct answer : ' + correctAnswer.innerHTML);
     pokemonImage.style.filter = 'brightness(100%)';
     pokemonImage.style.transition = 'filter 1s';
     
@@ -165,5 +166,11 @@ export class PokemonService {
     badAnswers.forEach(element => {
       element.classList.add('disabled');
     });
+    // Add 1 point to the score
+    this.Score = this.Score + 1;
+  
+    // Show the next pokemon
+    const nextPokemonButton = document.querySelector('.next-pokemon-button') as HTMLElement;
+    nextPokemonButton.style.visibility = 'visible';
   }
 }
