@@ -146,7 +146,8 @@ export class PokemonService {
   }
 
   // Show image of the pokemon when the user click on the correct answer and change the text
-  public showPokemonImage() {
+  public showPokemonImage(finded:boolean) {
+    finded==true?console.log("Trouvé"):console.log("Pas trouvé");
     const pokemonImage = document.querySelector(
       '.pokemon-image'
     ) as HTMLElement;
@@ -161,13 +162,23 @@ export class PokemonService {
     pokemonImage.style.transition = 'filter 1s';
     
     const mainText = document.querySelector("#main-text") as HTMLElement;
-    mainText.innerHTML = `C'est ${correctAnswer.innerHTML} !`;
+    
     correctAnswer.classList.add('success');
-    badAnswers.forEach(element => {
-      element.classList.add('disabled');
-    });
-    // Add 1 point to the score
-    this.Score = this.Score + 1;
+    if (finded){
+      badAnswers.forEach(element => {
+        element.classList.add('disabled');
+      });
+      mainText.innerHTML = `C'est ${correctAnswer.innerHTML} !`;
+      // Add 1 point to the score
+      this.Score = this.Score + 1;
+    }else{
+      badAnswers.forEach(element => {
+        element.classList.add('failed');
+      });
+      mainText.innerHTML = `Raté ! C'etait ${correctAnswer.innerHTML} !`;
+    }
+    
+    
   
     // Show the next pokemon
     const nextPokemonButton = document.querySelector('.next-pokemon-button') as HTMLElement;
