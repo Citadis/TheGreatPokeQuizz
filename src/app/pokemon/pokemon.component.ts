@@ -21,6 +21,10 @@ export class PokemonComponent implements OnInit {
     this.Score = this.PokemonService.Score;
   }
 
+  resetPokemon() {
+    this.PokemonService.resetPokemon();
+  }
+
   constructor(private PokemonService: PokemonService) {}
 
   ngOnInit() {

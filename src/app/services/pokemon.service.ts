@@ -166,11 +166,20 @@ export class PokemonService {
     badAnswers.forEach(element => {
       element.classList.add('disabled');
     });
+
     // Add 1 point to the score
     this.Score = this.Score + 1;
   
-    // Show the next pokemon
+    // Show the next pokemon button
     const nextPokemonButton = document.querySelector('.next-pokemon-button') as HTMLElement;
     nextPokemonButton.style.visibility = 'visible';
+
+    // Reset the pokemon
+    resetPokemon(){
+      
+    }
+
+
+
   }
 }
