@@ -15,8 +15,8 @@ export class PokemonComponent implements OnInit {
   Score = 0;
 
   // import the function showPokemonImage from the pokemon.service.ts file
-  showPokemonImage() {
-    this.PokemonService.showPokemonImage();
+  showPokemonImage(finded:boolean) {
+    this.PokemonService.showPokemonImage(finded);
     console.log(this.PokemonService.Score)
     this.Score = this.PokemonService.Score;
   }

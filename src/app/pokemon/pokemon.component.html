@@ -9,9 +9,9 @@
 
     <!-- 3 random propositions -->
     <div class="propositions">
-        <button (click)="showPokemonImage()" class="proposition">{{RandomProposition1}}</button>
-        <button class="proposition">{{RandomProposition2}}</button>
-        <button class="proposition">{{RandomProposition3}}</button>
+        <button (click)="showPokemonImage(true)" class="proposition">{{RandomProposition1}}</button>
+        <button (click)="showPokemonImage(false)" class="proposition">{{RandomProposition2}}</button>
+        <button (click)="showPokemonImage(false)" class="proposition">{{RandomProposition3}}</button>
     </div>
 
 
