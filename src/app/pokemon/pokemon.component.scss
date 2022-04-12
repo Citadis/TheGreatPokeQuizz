@@ -35,6 +35,15 @@ $btn-gradient: linear-gradient(45deg, #07d299, #acf4ce);
             cursor: default;
         }
     }
+
+    .disabled{
+        background: #888;
+        &:hover{
+            background: #888;
+            cursor: default;
+            pointer-events: none;
+        }   
+    }
 }
 
 main {

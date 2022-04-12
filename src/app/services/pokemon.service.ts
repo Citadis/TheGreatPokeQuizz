@@ -152,10 +152,16 @@ export class PokemonService {
     const correctAnswer = document.querySelector(
       '.proposition:nth-child(1)'
     ) as HTMLElement;
+    const badAnswers = document.querySelectorAll(
+      '.proposition:nth-child(2) , .proposition:nth-child(3)'
+    ) as NodeListOf<HTMLElement>;
     console.log('Correct answer');
     pokemonImage.style.filter = 'brightness(100%)';
     pokemonImage.style.transition = 'filter 1s';
 
     correctAnswer.classList.add('success');
+    badAnswers.forEach(element => {
+      element.classList.add('disabled');
+    });
   }
 }
